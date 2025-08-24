@@ -20,7 +20,7 @@ const getallthreads = async ()=>{
 
 
   try{
-    const response = await  fetch("http://localhost:8080/api/thread");
+    const response = await  fetch(`${import.meta.env.VITE_BACKEND_URL}/api/thread`);
     const res= await response.json()
     //we are just extracting threadId and thread tittle
    console.log(res)
@@ -61,7 +61,7 @@ const deletethread = async (threadId)=>{
      
 
   try{
-  const response = await fetch(`http://localhost:8080/api/thread/${threadId}`, {method:"DELETE"})
+  const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/thread/${threadId}`, {method:"DELETE"})
   const res = await response.json()
   console.log(res)
 
