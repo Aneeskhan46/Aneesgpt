@@ -11,7 +11,7 @@ import cors from "cors"
 import router from "./routes/chat.js"  // importing router from the file
 
 const app = express()
-const PORT =8080
+
 
 app.use(express.json());
 ///it is 
@@ -19,10 +19,13 @@ app.use(cors())
 
 app.use("/api", router )  /// it says when we start route with /api it goes to to that file
 
-app.listen(PORT , ()=>{
-     console.log(`server running on ${PORT}`);
-     connectDB()
-})
+const PORT = process.env.PORT || 8080;
+
+app.listen(PORT, () => {
+  console.log(`✅ Server running on port ${PORT}`);
+  connectDB();
+});
+
 
 const connectDB= async ()=>{
    try{
