@@ -48,7 +48,7 @@
 
 //for typing effect we are using this , in this code typing effect only included
 
-import "./Chat.css";
+import "./chat.css";
 
 
 import ReactMarkdown from "react-markdown";
